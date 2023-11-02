@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "node ./src/index.js",
     "watch": "nodemon --ext *"
   },
   "repository": {
