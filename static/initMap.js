@@ -7,6 +7,28 @@ var macarte = null;
     id = 0;
     // Créer l'objet "macarte" et l'insèrer dans l'élément HTML qui a l'ID "map"
     macarte = L.map('map').setView([lat, lon], 11);
+    var tiles = L.esri.basemapLayer("Streets").addTo(macarte);
+  
+    // create the geocoding control and add it to the map
+    var searchControl = L.esri.Geocoding.geosearch({
+      position: 'topleft',
+        placeholder: 'Rechercher une adresse',
+        expanded: true,
+        
+      providers: [
+        L.esri.Geocoding.arcgisOnlineProvider({
+          // API Key to be passed to the ArcGIS Online Geocoding Service
+          apikey: 'API_KEY',
+        })
+      ]
+    }).addTo(macarte);
+
+    // create an empty layer group to store the results and add it to the map
+    var results = L.layerGroup().addTo(macarte);
+
+    // listen for the results event and add every result to the map
+    searchControl.on("results", function (data) {
+    });
     markerClusters = L.markerClusterGroup(); // Nous initialisons les groupes de marqueurs
     macarte.setZoom(8);
     // Leaflet ne récupère pas les cartes (tiles) sur un serveur par défaut. Nous devons lui préciser où nous souhaitons les récupérer. Ici, openstreetmap.fr
@@ -21,7 +43,6 @@ var macarte = null;
         .then(data => {
             var markerClusters = L.markerClusterGroup();
             var markers = [];
-            let dataProperties;
 
             data.forEach( coords => {
                 var marker = L.marker([coords.latitude, coords.longitude]);
@@ -48,7 +69,7 @@ var macarte = null;
                         // Update the popup content with the result of the fetch request
                         marker.getPopup().setContent("<p>Nom de l'aménageur: " + data.properties.nom_amenageur + "</p><p>Adresse: " +
                          data.properties.adresse_station + '</p><p>Nombre de prise de charges: ' + data.properties.nbre_pdc + '</p>'
-                         + '<p>Puissance nominal: ' + data.properties.puissance_nominale + ' kW</p>');
+                         + '<p>Puissance nominal: ' + data.properties.puissance_nominale + ' kW</p><button onClick=\"window.open(\'https://www.google.com/maps/dir/?api=1&origin=Ma Position&destination=' + data.properties.adresse_station + '\')\"> Itinéraire </button>');
                     })
                     .catch(error => {
                         console.error('Error:', error);
@@ -66,7 +87,20 @@ var macarte = null;
 window.onload = function () {
     // Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
     initMap();
-    document.getElementsByClassName('leaflet-left').item(0).style.right = '0';
-    document.getElementsByClassName('leaflet-left').item(0).style.left = 'unset';
-    document.getElementsByClassName('leaflet-left').item(0).style.margin = '10px 10px 0 0';
+    let clone = document.getElementsByClassName('leaflet-control-zoom').item(0).cloneNode(true);
+    document.getElementsByClassName('leaflet-control-zoom').item(0).remove();
+    document.getElementsByClassName('leaflet-left').item(0).parentElement.appendChild(clone);
+    document.getElementsByClassName('leaflet-control-zoom').item(0).style.right = '0';
+    document.getElementsByClassName('leaflet-control-zoom').item(0).style.left = 'unset';
+    document.getElementsByClassName('leaflet-control-zoom').item(0).style.margin = '10px 10px 0 0';
+    document.getElementsByClassName('leaflet-control-zoom').item(0).style.position = 'absolute';
+    let input_container = document.getElementsByClassName('geocoder-control').item(0);
+    input_container.style.height = '50px';
+    input_container.firstChild.style.width = '100%';
+    input_container.firstChild.style.height = '100%';
+    input_container.firstChild.style.border = 'none';
+    input_container.firstChild.style.outline = 'none';
+    input_container.firstChild.style.fontSize = '16px';
+    input_container.firstChild.style.fontFamily = 'Arial';
+    input_container.firstChild.style.position = 'inherit';
 };
