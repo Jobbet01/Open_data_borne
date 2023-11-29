@@ -11,7 +11,7 @@ var macarte = null;
   
     // create the geocoding control and add it to the map
     var searchControl = L.esri.Geocoding.geosearch({
-      position: 'topleft',
+      position: 'topright',
         placeholder: 'Rechercher une adresse',
         expanded: true,
         
@@ -67,9 +67,9 @@ var macarte = null;
                     })
                     .then(data => {
                         // Update the popup content with the result of the fetch request
-                        marker.getPopup().setContent("<p>Nom de l'aménageur: " + data.properties.nom_amenageur + "</p><p>Adresse: " +
-                         data.properties.adresse_station + '</p><p>Nombre de prise de charges: ' + data.properties.nbre_pdc + '</p>'
-                         + '<p>Puissance nominal: ' + data.properties.puissance_nominale + ' kW</p><button onClick=\"window.open(\'https://www.google.com/maps/dir/?api=1&origin=Ma Position&destination=' + data.properties.adresse_station + '\')\"> Itinéraire </button>');
+                        marker.getPopup().setContent("<p class='title_popup'>" + data.properties.nom_amenageur + "</p><div class='div_popup'><div class='section_popup'><p>Adresse 📌: " +
+                         data.properties.adresse_station + '</p></div><div class="section_popup"><p>Nombre de prise de charges🔌: ' + data.properties.nbre_pdc + '</p></div>'
+                         + '<div class="section_popup"><p>Puissance nominal⚡️: ' + data.properties.puissance_nominale + ' kW</p></div></div><button class="button_popup" onClick=\"window.open(\'https://www.google.com/maps/dir/?api=1&origin=Ma Position&destination=' + data.properties.adresse_station + '\')\"> Itinéraire </button>');
                     })
                     .catch(error => {
                         console.error('Error:', error);
@@ -87,13 +87,6 @@ var macarte = null;
 window.onload = function () {
     // Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
     initMap();
-    let clone = document.getElementsByClassName('leaflet-control-zoom').item(0).cloneNode(true);
-    document.getElementsByClassName('leaflet-control-zoom').item(0).remove();
-    document.getElementsByClassName('leaflet-left').item(0).parentElement.appendChild(clone);
-    document.getElementsByClassName('leaflet-control-zoom').item(0).style.right = '0';
-    document.getElementsByClassName('leaflet-control-zoom').item(0).style.left = 'unset';
-    document.getElementsByClassName('leaflet-control-zoom').item(0).style.margin = '10px 10px 0 0';
-    document.getElementsByClassName('leaflet-control-zoom').item(0).style.position = 'absolute';
     let input_container = document.getElementsByClassName('geocoder-control').item(0);
     input_container.style.height = '50px';
     input_container.firstChild.style.width = '100%';
@@ -103,4 +96,5 @@ window.onload = function () {
     input_container.firstChild.style.fontSize = '16px';
     input_container.firstChild.style.fontFamily = 'Arial';
     input_container.firstChild.style.position = 'inherit';
+    input_container.firstChild.style.padding = '0px 10px';
 };
