@@ -10,7 +10,7 @@ let dataLocalisation = [];
 let data;
 
 async function initDataGouv() {
-  // await getDataGouv();
+  await getDataGouv();
   dataLocalisation = parseDataLocalisation();
 }
 
