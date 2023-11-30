@@ -10,7 +10,7 @@ let dataLocalisation = [];
 let data;
 
 async function initDataGouv() {
-  await getDataGouv();
+  // await getDataGouv();
   dataLocalisation = parseDataLocalisation();
 }
 
@@ -22,6 +22,7 @@ app.use(bodyParser.json());
 app.get('/', (req, res) => res.send('Hello World!'));
 
 app.get('/dataLocalisation', (req, res) => {
+  console.log(dataLocalisation);
   res.send(dataLocalisation);
 });
 

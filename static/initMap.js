@@ -14,11 +14,10 @@ var macarte = null;
       position: 'topleft',
         placeholder: 'Rechercher une adresse',
         expanded: true,
-        
       providers: [
         L.esri.Geocoding.arcgisOnlineProvider({
           // API Key to be passed to the ArcGIS Online Geocoding Service
-          apikey: 'API_KEY',
+          apikey: 'AAPKeb41583c42d642fd87e2c6832ddbb9ceQ3-KB8OS5RMs39Gsjcx4TcSSMwgrOtwinYaRJIZCy_SMfgXA7QhlN2TNW9S07nLL',
         })
       ]
     }).addTo(macarte);
@@ -66,10 +65,17 @@ var macarte = null;
                         return response.json();
                     })
                     .then(data => {
+                        coordonnate = data.properties.coordonneesXY.split(',');
+                        x = coordonnate[0];
+                        y = coordonnate[1];
+                        // remove the first character of x and the first and last character of y
+                        x = x.substring(1);
+                        y = y.substring(1, y.length - 1);
+                        console.log(x + ',' + y);
                         // Update the popup content with the result of the fetch request
                         marker.getPopup().setContent("<p>Nom de l'aménageur: " + data.properties.nom_amenageur + "</p><p>Adresse: " +
                          data.properties.adresse_station + '</p><p>Nombre de prise de charges: ' + data.properties.nbre_pdc + '</p>'
-                         + '<p>Puissance nominal: ' + data.properties.puissance_nominale + ' kW</p><button onClick=\"window.open(\'https://www.google.com/maps/dir/?api=1&origin=Ma Position&destination=' + data.properties.adresse_station + '\')\"> Itinéraire </button>');
+                         + '<p>Puissance nominal: ' + data.properties.puissance_nominale + ' kW</p><button onClick=\"window.open(\'https://www.google.com/maps/dir/?api=1&origin=Ma Position&destination=' + data.properties.adresse_station + '\')\"> Itinéraire </button><button onClick=\"window.open(\'https://waze.com/ul?ll=' + y + ',' + x + '\')\"> Itinéraire </button>');
                     })
                     .catch(error => {
                         console.error('Error:', error);
