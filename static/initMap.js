@@ -2,6 +2,7 @@
 var lat = 48.852969;
 var lon = 2.349903;
 var macarte = null;
+var info_borne = null;
 // Fonction d'initialisation de la carte
  function initMap() {
     id = 0;
@@ -13,6 +14,7 @@ var macarte = null;
     var searchControl = L.esri.Geocoding.geosearch({
       position: 'topright',
         placeholder: 'Rechercher une adresse',
+        useMapBounds: false,
         expanded: true,
       providers: [
         L.esri.Geocoding.arcgisOnlineProvider({
@@ -74,10 +76,11 @@ var macarte = null;
                         console.log(x + ',' + y);
                         // Update the popup content with the result of the fetch request
                         marker.getPopup().setContent("<p class='title_popup'>" + data.properties.nom_amenageur + "</p><div class='div_popup'><div class='section_popup'><p>Adresse 📌: " +
-                         data.properties.adresse_station + '</p></div><div class="section_popup"><p>Nombre de prise de charges🔌: ' + data.properties.nbre_pdc + '</p></div>'
+                         data.properties.adresse_station + '</p></div><div class="section_popup"><p class="clickable" title="Plus d\'information ?" onclick="more_info_pop()">Nombre de prise de charges🔌: ' + data.properties.nbre_pdc + '</p></div>'
                          + '<div class="section_popup"><p>Puissance nominal⚡️: ' + data.properties.puissance_nominale +
                          ' kW</p></div></div><button class="button_popup" onClick=\"window.open(\'https://www.google.com/maps/dir/?api=1&origin=Ma Position&destination='
                          + data.properties.adresse_station + '\')\"> Itinéraire Google maps</button><button class="button_popup" onClick=\"window.open(\'https://waze.com/ul?ll=' + y + ',' + x + '\')\"> Itinéraire Waze</button>');
+                        info_borne = data.properties;
                     })
                     .catch(error => {
                         console.error('Error:', error);
@@ -92,6 +95,70 @@ var macarte = null;
         })
         .catch(error => console.error(error));
 }
+
+// open a modal with more information about the compability of the station
+function more_info_pop() {
+    document.getElementById('modal').style.display = 'block';
+
+    if (info_borne.prise_type_ef.toLowerCase() !== "true") {
+        document.getElementById('ef').style.display == 'none' ? document.getElementById('ef').style.display = 'flex' : document.getElementById('ef').style.display = 'none';
+    }
+    if (info_borne.prise_type_2.toLowerCase() !== "true") {
+        document.getElementById('type2').style.display == 'none' ? document.getElementById('type2').style.display = 'flex' : document.getElementById('type2').style.display = 'none';
+    }
+    if (info_borne.prise_type_combo_ccs.toLowerCase() !== "true") {
+        document.getElementById('ccs').style.display == 'none' ? document.getElementById('ccs').style.display = 'flex' : document.getElementById('ccs').style.display = 'none';
+    }
+    if (info_borne.prise_type_chademo.toLowerCase() !== "true") {
+        document.getElementById('chademo').style.display == 'none' ? document.getElementById('chademo').style.display = 'flex' : document.getElementById('chademo').style.display = 'none';
+    }
+    if (info_borne.prise_type_autre.toLowerCase() !== "true") {
+        document.getElementById('unknown').style.display == 'none' ? document.getElementById('unknown').style.display = 'flex' : document.getElementById('unknown').style.display = 'none';
+    }
+}
+
+// close the modal
+function close_modal() {
+    document.getElementById('modal').style.display = 'none';
+}
+
+// Get the modal and the element to drag
+var modal = document.getElementById("modal");
+var dragElement = document.querySelector(".modal_content");
+
+var dragStartX, dragStartY;
+var modalStartX, modalStartY;
+
+// When the user presses the mouse button, record the initial positions
+dragElement.addEventListener("mousedown", function(event) {
+    dragStartX = event.clientX;
+    dragStartY = event.clientY;
+    modalStartX = parseInt(window.getComputedStyle(modal).left, 10);
+    modalStartY = parseInt(window.getComputedStyle(modal).top, 10);
+    event.preventDefault(); // prevent selection start (browser action)
+});
+
+// When the user drags the mouse, update the position of the modal
+dragElement.addEventListener("mousemove", function(event) {
+    if (dragStartX === undefined) {
+        return; // button not pressed
+    }
+    var dx = event.clientX - dragStartX;
+    var dy = event.clientY - dragStartY;
+    modal.style.left = modalStartX + dx + "px";
+    modal.style.top = modalStartY + dy + "px";
+});
+
+// When the user releases the mouse button, stop moving the modal
+dragElement.addEventListener("mouseup", function() {
+    dragStartX = undefined;
+});
+
+// Also stop moving the modal when the mouse leaves the window
+dragElement.addEventListener("mouseleave", function() {
+    dragStartX = undefined;
+});
+
 window.onload = function () {
     // Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
     initMap();

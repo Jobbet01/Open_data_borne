@@ -91,21 +91,118 @@
             font-size: 16px;
             font-weight: bold;
             cursor: pointer;
+            margin-bottom: 5px;
         }
         .button_popup:hover {
             color: white;
             background-color: #0477cf;
         }
-	</style>
+        .clickable {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .clickable:hover {
+            color: #0477cf;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 10px;
+            top: 5vh;
+            width: 29%;
+            min-width: 280px;
+            height: fit-content;
+            background-color: #ffffff;
+            border-radius: 20px;
+        }
+        .modal_content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .modal_content h2 {
+            font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+            margin: 7px 0 15px 0;
+            font-size: clamp(16px, 5vw, 24px);
+        }
+        .modal_content_type {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            height: 100%;
+        }
+        .modal_content_type_item {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            height: 60px;
+            column-gap: 10px;
+            margin-left: 7vw;
+        }
+        .modal_content_type_item img {
+            width: 30px;
+            height: 30px;
+        }
+        .modal_content_type_item p {
+            margin: 0;
+            font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+        }
+        .close {
+            color: black;
+            float: right;
+            font-size: 28px;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
         <title>Carte</title>
     </head>
     <body>
         <div id="map">
-	    <!-- Ici s'affichera la carte -->
-	</div>
+        <!-- Ici s'affichera la carte -->
+        </div>
+
+        <div class="modal" id="modal">
+            <div class="modal_content">
+                <span onclick="close_modal()" class="close">&times;</span>
+                <h2>Type de prise disponible</h2>
+                <div class="modal_content_type">
+                    <div class="modal_content_type_item" id="type2">
+                        <img src="ressource/connecteur-type-2.png" alt="prise">
+                        <p>Type 2</p>
+                    </div>
+                    <div class="modal_content_type_item" id="chademo">
+                        <img src="ressource/connecteur-chademo.png" alt="prise">
+                        <p>CHAdeMo</p>
+                    </div>
+                    <div class="modal_content_type_item" id="ccs">
+                        <img src="ressource/connecteur-type-ccs.png" alt="prise">
+                        <p>Combo CCS</p>
+                    </div>
+                    <div class="modal_content_type_item" id="ef">
+                        <img src="ressource/ef.png" alt="prise">
+                        <p>EF</p>
+                    </div>
+                    <div class="modal_content_type_item" id="unknown">
+                        <img src="ressource/unknown.svg" alt="prise">
+                        <p>Autre</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Fichiers Javascript -->
         <script type='text/javascript' src='https://unpkg.com/leaflet.markercluster@1.3.0/dist/leaflet.markercluster.js'></script>
-    <script type="text/javascript" src='initMap.js'></script>
+        <script type="text/javascript" src='initMap.js'></script>
     </body>
 </html>
