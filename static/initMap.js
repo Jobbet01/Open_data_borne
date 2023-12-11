@@ -101,19 +101,29 @@ function more_info_pop() {
     document.getElementById('modal').style.display = 'block';
 
     if (info_borne.prise_type_ef.toLowerCase() !== "true") {
-        document.getElementById('ef').style.display == 'none' ? document.getElementById('ef').style.display = 'flex' : document.getElementById('ef').style.display = 'none';
+        document.getElementById('ef').style.display == 'flex';
+    } else {
+        document.getElementById('ef').style.display == 'none';
     }
     if (info_borne.prise_type_2.toLowerCase() !== "true") {
-        document.getElementById('type2').style.display == 'none' ? document.getElementById('type2').style.display = 'flex' : document.getElementById('type2').style.display = 'none';
+        document.getElementById('type2').style.display == 'flex';
+    } else {
+        document.getElementById('type2').style.display == 'none';
     }
     if (info_borne.prise_type_combo_ccs.toLowerCase() !== "true") {
-        document.getElementById('ccs').style.display == 'none' ? document.getElementById('ccs').style.display = 'flex' : document.getElementById('ccs').style.display = 'none';
+        document.getElementById('ccs').style.display == 'flex';
+    } else {
+        document.getElementById('ccs').style.display == 'none';
     }
     if (info_borne.prise_type_chademo.toLowerCase() !== "true") {
-        document.getElementById('chademo').style.display == 'none' ? document.getElementById('chademo').style.display = 'flex' : document.getElementById('chademo').style.display = 'none';
+        document.getElementById('chademo').style.display == 'flex';
+    } else {
+        document.getElementById('chademo').style.display == 'none';
     }
     if (info_borne.prise_type_autre.toLowerCase() !== "true") {
-        document.getElementById('unknown').style.display == 'none' ? document.getElementById('unknown').style.display = 'flex' : document.getElementById('unknown').style.display = 'none';
+        document.getElementById('unknown').style.display == 'flex';
+    } else {
+        document.getElementById('unknown').style.display == 'none';
     }
 }
 
