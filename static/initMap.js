@@ -7,7 +7,14 @@ var info_borne = null;
  function initMap() {
     id = 0;
     // Créer l'objet "macarte" et l'insèrer dans l'élément HTML qui a l'ID "map"
-    macarte = L.map('map').setView([lat, lon], 11);
+    macarte = L.map('map', {
+        center: [lat, lon],
+        zoom: 11,
+        worldCopyJump: true,
+        minZoom: 3,
+    });
+    // worldCopyJump permet de faire en sorte que la carte se "répète" à l'infini
+    macarte.options.worldCopyJump = true;
     var tiles = L.esri.basemapLayer("Streets").addTo(macarte);
   
     // create the geocoding control and add it to the map
@@ -72,7 +79,7 @@ var info_borne = null;
                         y = coordonnate[1];
                         // remove the first character of x and the first and last character of y
                         x = x.substring(1);
-                        y = y.substring(1, y.length - 1);
+                        y = y.substring(0, y.length - 1);
                         console.log(x + ',' + y);
                         // Update the popup content with the result of the fetch request
                         marker.getPopup().setContent("<p class='title_popup'>" + data.properties.nom_amenageur + "</p><div class='div_popup'><div class='section_popup'><p>Adresse 📌: " +
@@ -99,31 +106,36 @@ var info_borne = null;
 // open a modal with more information about the compability of the station
 function more_info_pop() {
     document.getElementById('modal').style.display = 'block';
+    console.log(info_borne.prise_type_ef, info_borne.prise_type_2, info_borne.prise_type_combo_ccs, info_borne.prise_type_chademo, info_borne.prise_type_autre);
 
-    if (info_borne.prise_type_ef.toLowerCase() !== "true") {
-        document.getElementById('ef').style.display == 'flex';
+    if (info_borne.prise_type_ef.toLowerCase() === "true") {
+        console.log('ef');
+        document.getElementById('ef').style.display = 'flex';
     } else {
-        document.getElementById('ef').style.display == 'none';
+        console.log('no ef')
+        document.getElementById('ef').style.display = 'none';
     }
-    if (info_borne.prise_type_2.toLowerCase() !== "true") {
-        document.getElementById('type2').style.display == 'flex';
+    if (info_borne.prise_type_2.toLowerCase() === "true") {
+        document.getElementById('type2').style.display = 'flex';
     } else {
-        document.getElementById('type2').style.display == 'none';
+        document.getElementById('type2').style.display = 'none';
     }
-    if (info_borne.prise_type_combo_ccs.toLowerCase() !== "true") {
-        document.getElementById('ccs').style.display == 'flex';
+    if (info_borne.prise_type_combo_ccs.toLowerCase() === "true") {
+        document.getElementById('ccs').style.display = 'flex';
+        console.log('ccs');
     } else {
-        document.getElementById('ccs').style.display == 'none';
+        console.log('no ccs');
+        document.getElementById('ccs').style.display = 'none';
     }
-    if (info_borne.prise_type_chademo.toLowerCase() !== "true") {
-        document.getElementById('chademo').style.display == 'flex';
+    if (info_borne.prise_type_chademo.toLowerCase() === "true") {
+        document.getElementById('chademo').style.display = 'flex';
     } else {
-        document.getElementById('chademo').style.display == 'none';
+        document.getElementById('chademo').style.display = 'none';
     }
-    if (info_borne.prise_type_autre.toLowerCase() !== "true") {
-        document.getElementById('unknown').style.display == 'flex';
+    if (info_borne.prise_type_autre.toLowerCase() === "true") {
+        document.getElementById('unknown').style.display = 'flex';
     } else {
-        document.getElementById('unknown').style.display == 'none';
+        document.getElementById('unknown').style.display = 'none';
     }
 }
 

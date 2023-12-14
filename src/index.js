@@ -24,8 +24,10 @@ initDataGouv();
 app.use(express.static('static'));
 app.use(bodyParser.json());
 
-
-app.get('/', (req, res) => res.send('Hello World!'));
+app.get('/', (req, res) => {
+  res.redirect('/main.html');
+}
+);
 
 app.get('/dataLocalisation', (req, res) => {
   res.send(dataLocalisation);
