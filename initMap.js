@@ -1,1 +1,198 @@
-function _0x44e5(){var _0xa0c8a4=['latitude','<div\x20class=\x22section_popup\x22><p>Puissance\x20nominal⚡️:\x20','fontFamily','6396648aCwhVg','Network\x20response\x20was\x20not\x20ok','203413KnWZPN','addLayer','Geocoding','json','geosearch','no\x20ef','topright','ccs','50px','modal','</p></div>','display','Streets','getPopup','onload','true','</p></div><div\x20class=\x22section_popup\x22><p\x20class=\x22clickable\x22\x20title=\x22Plus\x20d\x27information\x20?\x22\x20onclick=\x22more_info_pop()\x22>Nombre\x20de\x20prise\x20de\x20charges🔌:\x20','adresse_station','nom_amenageur','prise_type_chademo','mouseleave','layerGroup','catch','16px','164EOuglo','geocoder-control','unknown','getComputedStyle','clientX','querySelector','getElementById','addEventListener','https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png','.modal_content','addLayers','Arial','myID','981UHJGtC','worldCopyJump','6kaPRJL','markerClusterGroup','100%','forEach','popup','application/json','flex','mouseup','241028yjGHMo','then','position','bindPopup','setContent','nbre_pdc','substring','basemapLayer','properties','prise_type_autre','left','\x20kW</p></div></div><button\x20class=\x22button_popup\x22\x20onClick=\x22window.open(\x27https://www.google.com/maps/dir/?api=1&origin=Ma\x20Position&destination=','height','style','3759RLphQS','905736hpAOwj','toLowerCase','item','Error:','preventDefault','block','fontSize','top','none','chademo','longitude','arcgisOnlineProvider','marker','inherit','length','push','tileLayer','options','Loading...','firstChild','outline','<p\x20class=\x27title_popup\x27>','border','type2','http://192.168.122.1:3000/data','prise_type_2','error','click','esri','11YuKKvy','mousemove','prise_type_combo_ccs','270ferpwz','padding','clientY','log','addTo','results','</p><div\x20class=\x27div_popup\x27><div\x20class=\x27section_popup\x27><p>Adresse\x20📌:\x20','50270jviTyy','4485fZIhNm','setZoom'];_0x44e5=function(){return _0xa0c8a4;};return _0x44e5();}var _0x48aa68=_0x540f;(function(_0x553417,_0x12d9e2){var _0x29fe1a=_0x540f,_0xda38ae=_0x553417();while(!![]){try{var _0x5b5d83=parseInt(_0x29fe1a(0x11c))/0x1+-parseInt(_0x29fe1a(0x14b))/0x2*(-parseInt(_0x29fe1a(0x12a))/0x3)+parseInt(_0x29fe1a(0x105))/0x4*(parseInt(_0x29fe1a(0x153))/0x5)+parseInt(_0x29fe1a(0x114))/0x6*(parseInt(_0x29fe1a(0x15a))/0x7)+-parseInt(_0x29fe1a(0x12b))/0x8+parseInt(_0x29fe1a(0x112))/0x9*(-parseInt(_0x29fe1a(0x152))/0xa)+-parseInt(_0x29fe1a(0x148))/0xb*(-parseInt(_0x29fe1a(0x158))/0xc);if(_0x5b5d83===_0x12d9e2)break;else _0xda38ae['push'](_0xda38ae['shift']());}catch(_0x508f55){_0xda38ae['push'](_0xda38ae['shift']());}}}(_0x44e5,0x54f09));var lat=48.852969,lon=2.349903,macarte=null,info_borne=null;function _0x540f(_0x4caa0a,_0x5f39c9){var _0x44e55b=_0x44e5();return _0x540f=function(_0x540f12,_0xf9b3ad){_0x540f12=_0x540f12-0x100;var _0x129e3b=_0x44e55b[_0x540f12];return _0x129e3b;},_0x540f(_0x4caa0a,_0x5f39c9);}function initMap(){var _0x522d31=_0x540f;id=0x0,macarte=L['map']('map',{'center':[lat,lon],'zoom':0xb,'worldCopyJump':!![],'minZoom':0x3}),macarte[_0x522d31(0x13c)][_0x522d31(0x113)]=!![];var _0x59753b=L['esri'][_0x522d31(0x123)](_0x522d31(0x166))[_0x522d31(0x14f)](macarte),_0x1ba105=L[_0x522d31(0x147)][_0x522d31(0x15c)][_0x522d31(0x15e)]({'position':_0x522d31(0x160),'placeholder':'Rechercher\x20une\x20adresse','useMapBounds':![],'expanded':!![],'providers':[L[_0x522d31(0x147)][_0x522d31(0x15c)][_0x522d31(0x136)]({'apikey':'AAPKeb41583c42d642fd87e2c6832ddbb9ceQ3-KB8OS5RMs39Gsjcx4TcSSMwgrOtwinYaRJIZCy_SMfgXA7QhlN2TNW9S07nLL'})]})['addTo'](macarte),_0x4c2448=L[_0x522d31(0x102)]()[_0x522d31(0x14f)](macarte);_0x1ba105['on'](_0x522d31(0x150),function(_0x1a4a54){}),markerClusters=L[_0x522d31(0x115)](),macarte[_0x522d31(0x154)](0x8),L[_0x522d31(0x13b)](_0x522d31(0x10d),{'attribution':'données\x20©\x20<a\x20href=\x22//osm.org/copyright\x22>OpenStreetMap</a>/ODbL\x20-\x20rendu\x20<a\x20href=\x22//openstreetmap.fr\x22>OSM\x20France</a>','minZoom':0x1,'maxZoom':0x14})[_0x522d31(0x14f)](macarte),fetch('http://192.168.122.1:3000/dataLocalisation')[_0x522d31(0x11d)](_0x21a70f=>_0x21a70f[_0x522d31(0x15d)]())[_0x522d31(0x11d)](_0x48bf13=>{var _0x5c64ff=_0x522d31,_0x4e6b6a=L[_0x5c64ff(0x115)](),_0x1809f9=[];_0x48bf13[_0x5c64ff(0x117)](_0x39db72=>{var _0x3287bb=_0x5c64ff,_0x6eed20=L[_0x3287bb(0x137)]([_0x39db72[_0x3287bb(0x155)],_0x39db72[_0x3287bb(0x135)]]),_0x4f9674=id;_0x6eed20[_0x3287bb(0x111)]=_0x4f9674;var _0x418a83=L[_0x3287bb(0x118)](_0x3287bb(0x13d));_0x6eed20[_0x3287bb(0x11f)](_0x3287bb(0x13d)),_0x6eed20['on'](_0x3287bb(0x146),function(){var _0x4f071f=_0x3287bb;fetch(_0x4f071f(0x143),{'method':'POST','headers':{'Content-Type':_0x4f071f(0x119)},'body':JSON['stringify']({'id':_0x4f9674})})['then'](_0x20b974=>{var _0x401d93=_0x4f071f;if(!_0x20b974['ok'])throw new Error(_0x401d93(0x159));return _0x20b974['json']();})[_0x4f071f(0x11d)](_0x5547e0=>{var _0x5266b8=_0x4f071f;coordonnate=_0x5547e0[_0x5266b8(0x124)]['coordonneesXY']['split'](','),x=coordonnate[0x0],y=coordonnate[0x1],x=x[_0x5266b8(0x122)](0x1),y=y[_0x5266b8(0x122)](0x0,y[_0x5266b8(0x139)]-0x1),console[_0x5266b8(0x14e)](x+','+y),_0x6eed20[_0x5266b8(0x167)]()[_0x5266b8(0x120)](_0x5266b8(0x140)+_0x5547e0[_0x5266b8(0x124)][_0x5266b8(0x16c)]+_0x5266b8(0x151)+_0x5547e0[_0x5266b8(0x124)][_0x5266b8(0x16b)]+_0x5266b8(0x16a)+_0x5547e0[_0x5266b8(0x124)][_0x5266b8(0x121)]+_0x5266b8(0x164)+_0x5266b8(0x156)+_0x5547e0[_0x5266b8(0x124)]['puissance_nominale']+_0x5266b8(0x127)+_0x5547e0[_0x5266b8(0x124)]['adresse_station']+'\x27)\x22>\x20Itinéraire\x20Google\x20maps</button><button\x20class=\x22button_popup\x22\x20onClick=\x22window.open(\x27https://waze.com/ul?ll='+y+','+x+'\x27)\x22>\x20Itinéraire\x20Waze</button>'),info_borne=_0x5547e0['properties'];})[_0x4f071f(0x103)](_0x410725=>{var _0x134a78=_0x4f071f;console[_0x134a78(0x145)](_0x134a78(0x12e),_0x410725),_0x6eed20[_0x134a78(0x167)]()[_0x134a78(0x120)]('Error:\x20'+_0x410725['message']);});}),_0x1809f9[_0x3287bb(0x13a)](_0x6eed20),id++;}),_0x4e6b6a[_0x5c64ff(0x10f)](_0x1809f9),macarte[_0x5c64ff(0x15b)](_0x4e6b6a);})['catch'](_0x3c49d5=>console[_0x522d31(0x145)](_0x3c49d5));}function more_info_pop(){var _0x5dd740=_0x540f;document['getElementById'](_0x5dd740(0x163))[_0x5dd740(0x129)][_0x5dd740(0x165)]=_0x5dd740(0x130),console[_0x5dd740(0x14e)](info_borne['prise_type_ef'],info_borne[_0x5dd740(0x144)],info_borne[_0x5dd740(0x14a)],info_borne[_0x5dd740(0x100)],info_borne[_0x5dd740(0x125)]),info_borne['prise_type_ef'][_0x5dd740(0x12c)]()===_0x5dd740(0x169)?(console[_0x5dd740(0x14e)]('ef'),document[_0x5dd740(0x10b)]('ef')[_0x5dd740(0x129)][_0x5dd740(0x165)]=_0x5dd740(0x11a)):(console[_0x5dd740(0x14e)](_0x5dd740(0x15f)),document['getElementById']('ef')[_0x5dd740(0x129)]['display']=_0x5dd740(0x133)),info_borne[_0x5dd740(0x144)][_0x5dd740(0x12c)]()===_0x5dd740(0x169)?document['getElementById'](_0x5dd740(0x142))[_0x5dd740(0x129)]['display']=_0x5dd740(0x11a):document[_0x5dd740(0x10b)](_0x5dd740(0x142))[_0x5dd740(0x129)][_0x5dd740(0x165)]=_0x5dd740(0x133),info_borne['prise_type_combo_ccs'][_0x5dd740(0x12c)]()===_0x5dd740(0x169)?(document[_0x5dd740(0x10b)](_0x5dd740(0x161))['style'][_0x5dd740(0x165)]=_0x5dd740(0x11a),console[_0x5dd740(0x14e)]('ccs')):(console[_0x5dd740(0x14e)]('no\x20ccs'),document['getElementById'](_0x5dd740(0x161))[_0x5dd740(0x129)]['display']=_0x5dd740(0x133)),info_borne[_0x5dd740(0x100)]['toLowerCase']()==='true'?document[_0x5dd740(0x10b)]('chademo')[_0x5dd740(0x129)][_0x5dd740(0x165)]=_0x5dd740(0x11a):document[_0x5dd740(0x10b)](_0x5dd740(0x134))[_0x5dd740(0x129)]['display']=_0x5dd740(0x133),info_borne[_0x5dd740(0x125)]['toLowerCase']()==='true'?document[_0x5dd740(0x10b)](_0x5dd740(0x107))[_0x5dd740(0x129)]['display']=_0x5dd740(0x11a):document['getElementById']('unknown')[_0x5dd740(0x129)]['display']=_0x5dd740(0x133);}function close_modal(){var _0x283e9f=_0x540f;document['getElementById']('modal')[_0x283e9f(0x129)][_0x283e9f(0x165)]='none';}var modal=document[_0x48aa68(0x10b)](_0x48aa68(0x163)),dragElement=document[_0x48aa68(0x10a)](_0x48aa68(0x10e)),dragStartX,dragStartY,modalStartX,modalStartY;dragElement['addEventListener']('mousedown',function(_0x1898d7){var _0x113716=_0x48aa68;dragStartX=_0x1898d7[_0x113716(0x109)],dragStartY=_0x1898d7[_0x113716(0x14d)],modalStartX=parseInt(window[_0x113716(0x108)](modal)[_0x113716(0x126)],0xa),modalStartY=parseInt(window[_0x113716(0x108)](modal)[_0x113716(0x132)],0xa),_0x1898d7[_0x113716(0x12f)]();}),dragElement[_0x48aa68(0x10c)](_0x48aa68(0x149),function(_0x5e9f85){var _0x556b31=_0x48aa68;if(dragStartX===undefined)return;var _0x4600a2=_0x5e9f85[_0x556b31(0x109)]-dragStartX,_0xc6d7a1=_0x5e9f85[_0x556b31(0x14d)]-dragStartY;modal[_0x556b31(0x129)]['left']=modalStartX+_0x4600a2+'px',modal[_0x556b31(0x129)]['top']=modalStartY+_0xc6d7a1+'px';}),dragElement[_0x48aa68(0x10c)](_0x48aa68(0x11b),function(){dragStartX=undefined;}),dragElement['addEventListener'](_0x48aa68(0x101),function(){dragStartX=undefined;}),window[_0x48aa68(0x168)]=function(){var _0x249a89=_0x48aa68;initMap();let _0x108bc1=document['getElementsByClassName'](_0x249a89(0x106))[_0x249a89(0x12d)](0x0);_0x108bc1[_0x249a89(0x129)][_0x249a89(0x128)]=_0x249a89(0x162),_0x108bc1[_0x249a89(0x13e)][_0x249a89(0x129)]['width']=_0x249a89(0x116),_0x108bc1[_0x249a89(0x13e)][_0x249a89(0x129)][_0x249a89(0x128)]=_0x249a89(0x116),_0x108bc1[_0x249a89(0x13e)]['style'][_0x249a89(0x141)]=_0x249a89(0x133),_0x108bc1[_0x249a89(0x13e)][_0x249a89(0x129)][_0x249a89(0x13f)]='none',_0x108bc1[_0x249a89(0x13e)][_0x249a89(0x129)][_0x249a89(0x131)]=_0x249a89(0x104),_0x108bc1[_0x249a89(0x13e)][_0x249a89(0x129)][_0x249a89(0x157)]=_0x249a89(0x110),_0x108bc1['firstChild'][_0x249a89(0x129)][_0x249a89(0x11e)]=_0x249a89(0x138),_0x108bc1['firstChild'][_0x249a89(0x129)][_0x249a89(0x14c)]='0px\x2010px';};
+// On initialise la latitude et la longitude de Paris (centre de la carte)
+var lat = 48.852969;
+var lon = 2.349903;
+var macarte = null;
+var info_borne = null;
+// Fonction d'initialisation de la carte
+ function initMap() {
+    id = 0;
+    // Créer l'objet "macarte" et l'insèrer dans l'élément HTML qui a l'ID "map"
+    macarte = L.map('map', {
+        center: [lat, lon],
+        zoom: 11,
+        worldCopyJump: true,
+        minZoom: 3,
+    });
+    // worldCopyJump permet de faire en sorte que la carte se "répète" à l'infini
+    macarte.options.worldCopyJump = true;
+    var tiles = L.esri.basemapLayer("Streets").addTo(macarte);
+  
+    // create the geocoding control and add it to the map
+    var searchControl = L.esri.Geocoding.geosearch({
+      position: 'topright',
+        placeholder: 'Rechercher une adresse',
+        useMapBounds: false,
+        expanded: true,
+      providers: [
+        L.esri.Geocoding.arcgisOnlineProvider({
+          // API Key to be passed to the ArcGIS Online Geocoding Service
+          apikey: 'AAPKeb41583c42d642fd87e2c6832ddbb9ceQ3-KB8OS5RMs39Gsjcx4TcSSMwgrOtwinYaRJIZCy_SMfgXA7QhlN2TNW9S07nLL',
+        })
+      ]
+    }).addTo(macarte);
+
+    // create an empty layer group to store the results and add it to the map
+    var results = L.layerGroup().addTo(macarte);
+
+    // listen for the results event and add every result to the map
+    searchControl.on("results", function (data) {
+    });
+    markerClusters = L.markerClusterGroup(); // Nous initialisons les groupes de marqueurs
+    macarte.setZoom(8);
+    // Leaflet ne récupère pas les cartes (tiles) sur un serveur par défaut. Nous devons lui préciser où nous souhaitons les récupérer. Ici, openstreetmap.fr
+    L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+        // Il est toujours bien de laisser le lien vers la source des données
+        attribution: 'données © <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>',
+        minZoom: 1,
+        maxZoom: 20
+    }).addTo(macarte);
+    fetch('http://192.168.122.1:3000/dataLocalisation', {referrerPolicy: "unsafe-url"})
+        .then(response => response.json())
+        .then(data => {
+            var markerClusters = L.markerClusterGroup();
+            var markers = [];
+
+            data.forEach( coords => {
+                var marker = L.marker([coords.latitude, coords.longitude]);
+                var myID = id; // Store the ID in a separate variable
+                marker.myID = myID;
+                var popup = L.popup('Loading...');
+                marker.bindPopup('Loading...');
+                marker.on('click', function () {
+                    // Make a POST fetch request with the id in the body
+                    fetch('http://192.168.122.1:3000/data', {
+                        method: 'POST',
+                        referrerPolicy: "unsafe-url",
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ id: myID }),
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        coordonnate = data.properties.coordonneesXY.split(',');
+                        x = coordonnate[0];
+                        y = coordonnate[1];
+                        // remove the first character of x and the first and last character of y
+                        x = x.substring(1);
+                        y = y.substring(0, y.length - 1);
+                        console.log(x + ',' + y);
+                        // Update the popup content with the result of the fetch request
+                        marker.getPopup().setContent("<p class='title_popup'>" + data.properties.nom_amenageur + "</p><div class='div_popup'><div class='section_popup'><p>Adresse 📌: " +
+                         data.properties.adresse_station + '</p></div><div class="section_popup"><p class="clickable" title="Plus d\'information ?" onclick="more_info_pop()">Nombre de prise de charges🔌: ' + data.properties.nbre_pdc + '</p></div>'
+                         + '<div class="section_popup"><p>Puissance nominal⚡️: ' + data.properties.puissance_nominale +
+                         ' kW</p></div></div><button class="button_popup" onClick=\"window.open(\'https://www.google.com/maps/dir/?api=1&origin=Ma Position&destination='
+                         + data.properties.adresse_station + '\')\"> Itinéraire Google maps</button><button class="button_popup" onClick=\"window.open(\'https://waze.com/ul?ll=' + y + ',' + x + '\')\"> Itinéraire Waze</button>');
+                        info_borne = data.properties;
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        marker.getPopup().setContent("Error: " + error.message);
+                    });
+                });
+                markers.push(marker);
+                id++;
+            });
+            markerClusters.addLayers(markers);
+            macarte.addLayer(markerClusters); // Nous ajoutons le groupe de marqueurs à la carte
+        })
+        .catch(error => console.error(error));
+}
+
+// open a modal with more information about the compability of the station
+function more_info_pop() {
+    document.getElementById('modal').style.display = 'block';
+    console.log(info_borne.prise_type_ef, info_borne.prise_type_2, info_borne.prise_type_combo_ccs, info_borne.prise_type_chademo, info_borne.prise_type_autre);
+
+    if (info_borne.prise_type_ef.toLowerCase() === "true") {
+        console.log('ef');
+        document.getElementById('ef').style.display = 'flex';
+    } else {
+        console.log('no ef')
+        document.getElementById('ef').style.display = 'none';
+    }
+    if (info_borne.prise_type_2.toLowerCase() === "true") {
+        document.getElementById('type2').style.display = 'flex';
+    } else {
+        document.getElementById('type2').style.display = 'none';
+    }
+    if (info_borne.prise_type_combo_ccs.toLowerCase() === "true") {
+        document.getElementById('ccs').style.display = 'flex';
+        console.log('ccs');
+    } else {
+        console.log('no ccs');
+        document.getElementById('ccs').style.display = 'none';
+    }
+    if (info_borne.prise_type_chademo.toLowerCase() === "true") {
+        document.getElementById('chademo').style.display = 'flex';
+    } else {
+        document.getElementById('chademo').style.display = 'none';
+    }
+    if (info_borne.prise_type_autre.toLowerCase() === "true") {
+        document.getElementById('unknown').style.display = 'flex';
+    } else {
+        document.getElementById('unknown').style.display = 'none';
+    }
+}
+
+// close the modal
+function close_modal() {
+    document.getElementById('modal').style.display = 'none';
+}
+
+// Get the modal and the element to drag
+var modal = document.getElementById("modal");
+var dragElement = document.querySelector(".modal_content");
+
+var dragStartX, dragStartY;
+var modalStartX, modalStartY;
+
+// When the user presses the mouse button, record the initial positions
+dragElement.addEventListener("mousedown", function(event) {
+    dragStartX = event.clientX;
+    dragStartY = event.clientY;
+    modalStartX = parseInt(window.getComputedStyle(modal).left, 10);
+    modalStartY = parseInt(window.getComputedStyle(modal).top, 10);
+    event.preventDefault(); // prevent selection start (browser action)
+});
+
+// When the user drags the mouse, update the position of the modal
+dragElement.addEventListener("mousemove", function(event) {
+    if (dragStartX === undefined) {
+        return; // button not pressed
+    }
+    var dx = event.clientX - dragStartX;
+    var dy = event.clientY - dragStartY;
+    modal.style.left = modalStartX + dx + "px";
+    modal.style.top = modalStartY + dy + "px";
+});
+
+// When the user releases the mouse button, stop moving the modal
+dragElement.addEventListener("mouseup", function() {
+    dragStartX = undefined;
+});
+
+// Also stop moving the modal when the mouse leaves the window
+dragElement.addEventListener("mouseleave", function() {
+    dragStartX = undefined;
+});
+
+window.onload = function () {
+    // Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
+    initMap();
+    let input_container = document.getElementsByClassName('geocoder-control').item(0);
+    input_container.style.height = '50px';
+    input_container.firstChild.style.width = '100%';
+    input_container.firstChild.style.height = '100%';
+    input_container.firstChild.style.border = 'none';
+    input_container.firstChild.style.outline = 'none';
+    input_container.firstChild.style.fontSize = '16px';
+    input_container.firstChild.style.fontFamily = 'Arial';
+    input_container.firstChild.style.position = 'inherit';
+    input_container.firstChild.style.padding = '0px 10px';
+};
